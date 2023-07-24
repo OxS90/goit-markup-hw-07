@@ -9,7 +9,7 @@
 }
 body {
 	width: 1600px;
-	margin: 0 auto;
+	margin: auto;
 }
 .container {
 	font-family: "Roboto", sans-serif;
@@ -170,7 +170,6 @@ header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	position: relative;
 }
 .main-section-intro h1 {
 	color: var(--text-dark-bg-color);
@@ -209,14 +208,14 @@ header {
 	z-index: 10;
 }
 .modal {
-	width: 528px;
-	height: 581px;
+	min-width: 528px;
+	min-height: 581px;
 	flex-shrink: 0;
 	background-color: var(--text-dark-bg-color);
 	border-radius: 4px;
 	box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
 		0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-	position: relative;
+	position: fixed;
 	transform: scale(1);
 	transition: 2500ms linear;
 }
