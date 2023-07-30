@@ -1,6 +1,7 @@
 :root {
 	--dark-bg-color: #2f303a;
 	--light-bg-color: #f5f4fa;
+	--pure-black: #000;
 	--text-bg-color: #212121;
 	--text-dark-bg-color: #ffffff;
 	--link-color-active: #2196f3;
@@ -100,11 +101,13 @@ header {
 	font-weight: 700;
 	letter-spacing: 0.78px;
 }
-.global-header .mail-phone .link,
-.global-footer .mail-phone a {
+.global-header .mail-phone .link {
 	color: var(--shaded-color);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.global-header .mail-phone .link svg {
 	fill: var(--shaded-color);
-	transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .global-header .logo span,
 .global-footer .logo span,
@@ -118,11 +121,13 @@ header {
 	color: var(--link-color-active);
 }
 .global-header .mail-phone .link:hover,
-.global-header.mail-phone .link:focus {
+.global-header .mail-phone .link:focus {
 	color: var(--link-color-active);
+}
+.global-header .mail-phone .link:hover > svg,
+.global-header .mail-phone .link:focus > svg {
 	fill: var(--link-color-active);
 }
-
 /* footer */
 
 .global-footer .logo,
@@ -130,6 +135,10 @@ header {
 .global-footer-social-links h3,
 .global-footer-subscribe-form label {
 	color: var(--text-dark-bg-color);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.global-footer .mail-phone a {
+	color: var(--shaded-color);
 	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer {
@@ -276,18 +285,8 @@ form > p {
 	top: 11px;
 	left: 12px;
 	fill: currentColor;
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.form-field input:focus,
-.modal-form > textarea:focus {
-	outline: none;
-	border-color: var(--link-color-active);
-}
-
-.form-field > input:focus + svg {
-	color: var(--link-color-active);
-}
-
 .modal-form > textarea {
 	width: 448px;
 	height: 120px;
@@ -295,6 +294,14 @@ form > p {
 	border: 1px solid rgba(33, 33, 33, 0.2);
 	padding: 12px 16px;
 	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-field input:focus,
+.modal-form > textarea:focus {
+	outline: none;
+	border-color: var(--link-color-active);
+}
+.form-field input:focus + svg {
+	color: var(--link-color-active);
 }
 .form-end {
 	margin-top: 20px;
@@ -322,9 +329,10 @@ form > p {
 	margin-right: 7px;
 	width: 16px;
 	height: 15px;
+	fill: var(--text-bg-color);
 	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.checkbox-field:hover .checkmark {
+.checkbox-field:hover > .checkmark {
 	fill: var(--link-color-active);
 }
 .checkmark-checked {
@@ -369,6 +377,7 @@ form > p {
 	cursor: pointer;
 }
 .main-section-intro .close-button svg {
+	fill: var(--pure-black);
 	width: 18px;
 	height: 18px;
 	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -489,27 +498,29 @@ ul.customers-section {
 	gap: 10px;
 	margin-bottom: 30px;
 }
-.icon {
+.icons-list .icon {
 	width: 44px;
 	height: 44px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 50%;
-}
-.icon svg {
-	width: 20px;
-	height: 20px;
-}
-.our-team-card .icon {
-	fill: var(--svg-shaded-color);
-	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: var(--text-dark-bg-color);
 	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.our-team-card .icon:hover,
-.our-team-card .icon:focus {
-	fill: var(--text-dark-bg-color);
+.icons-list .icon:hover,
+.icons-list .icon:focus {
 	background-color: var(--link-color-active);
+}
+.icon > svg {
+	width: 20px;
+	height: 20px;
+	fill: var(--svg-shaded-color);
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icons-list .icon:hover > svg,
+.icons-list .icon:focus > svg {
+	fill: var(--text-dark-bg-color);
 }
 .icon-logo-card {
 	width: 170px;
@@ -590,8 +601,10 @@ ul.customers-section {
 .global-footer-social-links .icons-list {
 	margin: 0;
 }
-.global-footer-social-links .icon {
+.global-footer-social-links .icon svg {
 	fill: var(--text-dark-bg-color);
+}
+.global-footer-social-links .icon {
 	background-color: rgba(255, 255, 255, 0.1);
 	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -603,6 +616,7 @@ ul.customers-section {
 /* portfolio styling */
 
 .portfolio-button-list button {
+	color: var(--text-bg-color);
 	background-color: var(--light-bg-color);
 	text-align: center;
 	font-weight: 500;
@@ -612,7 +626,9 @@ ul.customers-section {
 	border-radius: 4px;
 	padding: 6px 22px 6px 22px;
 	cursor: pointer;
-	transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-main-section .portfolio-button-list {
 	display: flex;
@@ -695,24 +711,31 @@ ul.customers-section {
 .box:hover .overlay {
 	transform: translatey(0);
 }
-.project-card > h3 {
+.project-card .description > h3 {
 	font-size: 18px;
 	font-weight: 700;
 	line-height: 36px;
 	letter-spacing: 1.08px;
-	margin: 20px 24px 0 24px;
+	margin: 0;
 }
-.project-card > h4 {
+.project-card .description > h4 {
 	color: var(--shaded-color);
 	line-height: 30px;
 	letter-spacing: 0.48px;
 	font-size: 16px;
 	font-weight: 400;
-	margin: 0 24px 20px 24px;
+	margin: 0;
+}
+.project-card .description {
+	border: 1px solid #eee;
+	border-top: none;
+	padding: 20px 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
 }
 .project-card {
-	box-shadow: 0px 0px 0px 1px #eee inset;
-	transition: box-shadow 250s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project-card:hover,
 .project-card:focus {
