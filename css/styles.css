@@ -96,6 +96,7 @@ header {
 }
 .global-header .logo,
 .global-footer .logo {
+	color: var(--pure-black);
 	font-family: "Raleway";
 	font-size: 26px;
 	font-weight: 700;
@@ -329,7 +330,7 @@ form > p {
 	margin-right: 7px;
 	width: 16px;
 	height: 15px;
-	fill: var(--text-bg-color);
+	fill: var(--pure-black);
 	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .checkbox-field:hover > .checkmark {
