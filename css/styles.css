@@ -51,7 +51,7 @@ header {
 	font-size: 14px;
 	font-weight: 500;
 	letter-spacing: 0.28px;
-	transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigation-tabs,
 .global-header .mail-phone {
@@ -104,6 +104,7 @@ header {
 .global-footer .mail-phone a {
 	color: var(--shaded-color);
 	fill: var(--shaded-color);
+	transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .global-header .logo span,
 .global-footer .logo span,
@@ -126,21 +127,24 @@ header {
 
 .global-footer .logo,
 .global-footer .mail-phone div,
-.global-footer-social-links h3 {
+.global-footer-social-links h3,
+.global-footer-subscribe-form label {
 	color: var(--text-dark-bg-color);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer {
 	background-color: var(--dark-bg-color);
 	height: 251px;
-	padding-top: 60px;
 }
 .footer .container {
 	display: flex;
 	gap: 94px;
 }
+.global-footer {
+	margin-top: 60px;
+}
 .global-footer a {
 	text-decoration: none;
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .global-footer .mail-phone {
 	display: flex;
@@ -195,6 +199,7 @@ header {
 	letter-spacing: 0.96px;
 	cursor: pointer;
 	border-radius: 4px;
+	border-style: none;
 }
 .backdrop {
 	position: fixed;
@@ -210,9 +215,8 @@ header {
 	z-index: 10;
 }
 .modal {
-	min-width: 528px;
-	min-height: 581px;
-	flex-shrink: 0;
+	width: 528px;
+	height: 581px;
 	background-color: var(--text-dark-bg-color);
 	border-radius: 4px;
 	box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
@@ -231,6 +235,124 @@ header {
 	transform: scale(0);
 	transition: 2500ms linear;
 }
+.modal-form {
+	display: flex;
+	flex-direction: column;
+	padding: 40px;
+	margin: 0 auto;
+}
+form > p {
+	text-align: center;
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 0.6px;
+	margin-top: 0;
+	margin-bottom: 12px;
+}
+.form-label {
+	color: var(--shaded-color);
+	font-size: 12px;
+	letter-spacing: 0.12px;
+	margin-bottom: 4px;
+}
+.form-field {
+	position: relative;
+	cursor: pointer;
+}
+.form-field > input {
+	width: 448px;
+	height: 40px;
+	padding-left: 42px;
+	border-radius: 4px;
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	line-height: 16px;
+	margin-bottom: 10px;
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-field svg {
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	top: 11px;
+	left: 12px;
+	fill: currentColor;
+}
+
+.form-field input:focus,
+.modal-form > textarea:focus {
+	outline: none;
+	border-color: var(--link-color-active);
+}
+
+.form-field > input:focus + svg {
+	color: var(--link-color-active);
+}
+
+.modal-form > textarea {
+	width: 448px;
+	height: 120px;
+	border-radius: 4px;
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	padding: 12px 16px;
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-end {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+}
+.checkbox-field {
+	display: flex;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+	color: var(--shaded-color);
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: 0.42px;
+}
+.checkbox-field input {
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+.checkmark {
+	margin-right: 7px;
+	width: 16px;
+	height: 15px;
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.checkbox-field:hover .checkmark {
+	fill: var(--link-color-active);
+}
+.checkmark-checked {
+	position: absolute;
+	width: 16px;
+	height: 15px;
+	visibility: hidden;
+}
+.container input:checked ~ .checkmark-checked {
+	visibility: visible;
+}
+.checkbox-field > a {
+	color: var(--link-color-active);
+}
+.modal-form .form-end > button {
+	width: 200px;
+	height: 50px;
+	border-radius: 4px;
+	border-style: none;
+	background: var(--link-color-active);
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+	color: var(--text-dark-bg-color);
+	text-align: center;
+	font-weight: 700;
+	line-height: 30px;
+	letter-spacing: 0.96px;
+}
+
 .main-section-intro .close-button {
 	width: 30px;
 	height: 30px;
@@ -249,6 +371,11 @@ header {
 .main-section-intro .close-button svg {
 	width: 18px;
 	height: 18px;
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.main-section-intro .close-button > svg:hover,
+.main-section-intro .close-button > svg:focus {
+	fill: var(--link-color-active);
 }
 /* sectiunile unordered list */
 
@@ -376,7 +503,8 @@ ul.customers-section {
 }
 .our-team-card .icon {
 	fill: var(--svg-shaded-color);
-	transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .our-team-card .icon:hover,
 .our-team-card .icon:focus {
@@ -392,7 +520,8 @@ ul.customers-section {
 	border-radius: 4px;
 	border: 1px solid var(--svg-shaded-color);
 	fill: var(--svg-shaded-color);
-	transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-logo-card svg {
 	width: 106px;
@@ -403,12 +532,60 @@ ul.customers-section {
 	border-color: var(--link-color-active);
 	fill: var(--link-color-active);
 }
-.global-footer-social-links h3 {
+.global-footer-subscribe-form form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.global-footer-social-links,
+.global-footer-subscribe-form {
+	margin-top: 72px;
+}
+.global-footer-social-links h3,
+.global-footer-subscribe-form label {
 	font-size: 14px;
 	font-weight: 700;
 	letter-spacing: 0.42px;
 	text-transform: uppercase;
+	margin-top: 0;
 	margin-bottom: 20px;
+}
+.global-footer-subscribe-form input {
+	width: 358px;
+	height: 50px;
+	border-radius: 4px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	background: rgba(33, 150, 243, 0);
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+	padding-left: 16px;
+	color: rgba(255, 255, 255, 0.6);
+	line-height: 20px;
+	letter-spacing: 0.48px;
+}
+.global-footer-subscribe-form button {
+	width: 200px;
+	height: 50px;
+	border-radius: 4px;
+	background: var(--link-color-active);
+	border-style: none;
+	cursor: pointer;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button-send {
+	color: var(--text-dark-bg-color);
+	font-weight: 700;
+	line-height: 30px;
+	letter-spacing: 0.96px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 25px;
+}
+.global-footer-subscribe-form svg {
+	width: 24px;
+	height: 24px;
+	fill: var(--text-dark-bg-color);
 }
 .global-footer-social-links .icons-list {
 	margin: 0;
@@ -416,7 +593,7 @@ ul.customers-section {
 .global-footer-social-links .icon {
 	fill: var(--text-dark-bg-color);
 	background-color: rgba(255, 255, 255, 0.1);
-	transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .global-footer-social-links .icon:hover,
 .global-footer-social-links .icon:focus {
@@ -445,8 +622,8 @@ ul.customers-section {
 	margin-bottom: 50px;
 	gap: 8px;
 }
-.portfolio-main-section button:hover,
-.portfolio-main-section button:focus {
+.portfolio-main-section .portfolio-button-list button:hover,
+.portfolio-main-section .portfolio-button-list button:focus {
 	color: var(--text-dark-bg-color);
 	background-color: var(--link-color-active);
 	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
@@ -535,10 +712,10 @@ ul.customers-section {
 }
 .project-card {
 	box-shadow: 0px 0px 0px 1px #eee inset;
+	transition: box-shadow 250s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project-card:hover,
 .project-card:focus {
 	box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
 		0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
-	transition: box-shadow 250s cubic-bezier(0.4, 0, 0.2, 1);
 }
