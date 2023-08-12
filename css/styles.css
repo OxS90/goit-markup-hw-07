@@ -886,6 +886,9 @@ ul.customers-section {
 	.icon-logo-card {
 		width: 226px;
 	}
+	.footer .container {
+		align-items: baseline;
+	}
 	.portfolio-main-section .portfolio-button-list {
 		width: 100%;
 		justify-content: center;
@@ -1006,7 +1009,6 @@ ul.customers-section {
 		width: 170px;
 	}
 	.footer .container {
-		justify-content: baseline;
 		gap: 94px;
 	}
 	.global-footer-subscribe-form div {
@@ -1017,7 +1019,7 @@ ul.customers-section {
 	.global-footer .mail-phone,
 	.global-footer-social-links,
 	.global-footer-subscribe-form form {
-		align-items: flex-start;
+		align-items: baseline;
 	}
 	.modal {
 		max-width: 528px;
