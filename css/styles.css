@@ -881,6 +881,9 @@ ul.customers-section {
 	.our-assets-card .main-title {
 		text-align: left;
 	}
+	.our-team-card {
+		max-width: 354px;
+	}
 	.icon-logo-card {
 		width: 226px;
 	}
@@ -985,6 +988,9 @@ ul.customers-section {
 		letter-spacing: 0.42px;
 		text-transform: uppercase;
 		background: rgba(47, 48, 58, 0.8);
+	}
+	.our-job-list {
+		flex-direction: row;
 	}
 	.our-team-card,
 	.our-assets-card {
