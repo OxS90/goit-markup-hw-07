@@ -191,11 +191,9 @@ header {
 	background-color: var(--dark-bg-color);
 }
 .footer .container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	gap: 60px;
 }
+.footer .container,
 .global-footer,
 .global-footer .mail-phone,
 .global-footer-social-links,
@@ -204,6 +202,7 @@ header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 }
 .global-footer-social-links,
 .global-footer-subscribe-form form,
@@ -1007,13 +1006,8 @@ ul.customers-section {
 		width: 170px;
 	}
 	.footer .container {
-		justify-content: left;
+		justify-content: baseline;
 		gap: 94px;
-	}
-
-	.global-footer-social-links,
-	.global-footer-subscribe-form {
-		padding-top: 12px;
 	}
 	.global-footer-subscribe-form div {
 		flex-direction: row;
