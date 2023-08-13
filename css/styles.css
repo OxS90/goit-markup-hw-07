@@ -870,7 +870,7 @@ ul.customers-section {
 	.portfolio-main-section .portfolio-button-list {
 		flex-direction: row;
 		justify-content: center;
-		max-width: 100%;
+		width: 100%;
 	}
 	.project-card .box {
 		width: 354px;
