@@ -27,7 +27,6 @@ img {
 	max-width: 100%;
 	height: auto;
 }
-/* scoatem  decoration la elementele listei*/
 .navigation-tabs,
 .mail-phone,
 .menu-container ul,
@@ -126,6 +125,7 @@ header {
 	cursor: pointer;
 	width: 40px;
 	height: 40px;
+	padding: 0;
 }
 .menu-container .menu-toggle > svg {
 	fill: var(--text-bg-color);
@@ -862,14 +862,12 @@ ul.customers-section {
 		flex-wrap: wrap;
 		gap: 30px;
 	}
-	.our-assets-card {
-		max-width: 350px;
+	.our-assets-card,
+	.our-team-card {
+		max-width: 354px;
 	}
 	.our-assets-card .main-title {
 		text-align: left;
-	}
-	.our-team-card {
-		max-width: 354px;
 	}
 	.icon-logo-card {
 		padding: 15px 60px;
@@ -986,6 +984,9 @@ ul.customers-section {
 		letter-spacing: 1.08px;
 		margin-bottom: 50px;
 	}
+	.our-job-list {
+		flex-wrap: wrap;
+	}
 	.our-job-list > li {
 		position: relative;
 		width: 370px;
@@ -994,6 +995,7 @@ ul.customers-section {
 		background-position: 50%;
 		background-size: cover;
 		background-repeat: no-repeat;
+		flex-shrink: 0;
 	}
 	.our-job-list > li > p {
 		position: absolute;
@@ -1017,8 +1019,13 @@ ul.customers-section {
 	.our-assets-card {
 		width: 270px;
 	}
+	.our-team-card {
+		height: 428px;
+	}
 	.our-team-card img {
-		height: 260px;
+		overflow: hidden;
+		width: 100%;
+		height: auto;
 	}
 	.icons-list {
 		margin-bottom: 30px;
@@ -1051,7 +1058,7 @@ ul.customers-section {
 	}
 	.form-field > input,
 	.modal-form > textarea {
-		width: 448px;
+		width: 100%;
 	}
 	.checkbox-field {
 		font-size: 14px;
