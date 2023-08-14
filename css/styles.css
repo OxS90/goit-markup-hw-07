@@ -507,6 +507,7 @@ form > p {
 	background-color: var(--light-bg-color);
 }
 .our-team-card {
+	max-width: 450px;
 	background-color: var(--text-dark-bg-color);
 	border-radius: 0px 0px 4px 4px;
 	box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
